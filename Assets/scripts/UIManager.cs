@@ -57,16 +57,8 @@ public class UIManager : MonoBehaviour
     void loadNextLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
+        SceneManager.LoadScene(currentSceneIndex + 1);
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-            Debug.Log("No more levels to load.");
-        }
     }
 }
 
